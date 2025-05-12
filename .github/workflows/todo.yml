@@ -1,7 +1,7 @@
 name: CI/CD completo
 
 env:
-  IMAGE_NAME: galeria
+  IMAGE_NAME: api-armario
   # FILES: compose.yml
 
 # GitHub Secrets
