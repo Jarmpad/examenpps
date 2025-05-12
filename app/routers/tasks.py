@@ -5,6 +5,7 @@ from app.database import engine
 
 router = APIRouter()
 
+
 @router.get("/tasks", response_model=list[Task])
 def read_tasks():
     with Session(engine) as session:
