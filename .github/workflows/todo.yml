@@ -72,3 +72,14 @@ jobs:
             docker rm -f web1
             docker rmi ${{ secrets.USER_DH }}/${{ env.IMAGE_NAME }}
             docker run -d -p 80:8000 --name web1 ${{secrets.USER_DH}}/${{env.IMAGE_NAME}}
+  
+  scan:
+    name: gitleaks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
