@@ -19,4 +19,5 @@ app.include_router(tasks.router)
 # Código que se añade
 @app.get("/version")
 def version():
+    test = true
     return {"message": "Armario Padilla, Juan Antonio - v0"}
